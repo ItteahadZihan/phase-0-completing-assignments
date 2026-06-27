@@ -31,3 +31,8 @@ jspm_packages
 
 # Learn-specific .results.json
 .results.json
+
+# Local configuration and build output
+.env
+dist
+coverage

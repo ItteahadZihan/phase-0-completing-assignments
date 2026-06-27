@@ -1,30 +1,35 @@
 {
-  "name": "welcome-completing-assignments",
-  "version": "1.0.0",
-  "description": "## Introduction",
-  "main": "index.js",
+  "name": "custom-solana-launchpad",
+  "version": "0.1.0",
+  "description": "A configurable Solana token launchpad starter with transparent creation fees.",
+  "type": "module",
+  "main": "dist/server.js",
   "scripts": {
-    "test": "mocha --timeout 5000 -R mocha-multi --reporter-options spec=-,json=.results.json"
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/server.js",
+    "test": "vitest run"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/learn-co-curriculum/welcome-completing-assignments.git"
-  },
-  "author": "maxwellbenton <maxwellbenton@gmail.com>",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/learn-co-curriculum/welcome-completing-assignments/issues"
-  },
-  "homepage": "https://github.com/learn-co-curriculum/welcome-completing-assignments#readme",
-  "devDependencies": {
-    "chai": "^3.5.0",
-    "expect": "^1.20.2",
-    "jsdom": "^9.2.0",
-    "mocha": "^6.1.4",
-    "mocha-jsdom": "~1.1.0",
-    "mocha-multi": "^1.1.0"
-  },
+  "keywords": [
+    "solana",
+    "launchpad",
+    "spl-token"
+  ],
+  "author": "",
+  "license": "MIT",
   "dependencies": {
-    "chai-fs": "^2.0.0"
+    "@solana/spl-token": "^0.4.14",
+    "@solana/web3.js": "^1.98.4",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.0.1",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.9"
   }
 }
