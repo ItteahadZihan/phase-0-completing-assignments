@@ -25,7 +25,9 @@ export const launchRequestSchema = z.object({
 });
 
 export type LaunchRequestInput = z.input<typeof launchRequestSchema>;
-export type LaunchRequest = z.output<typeof launchRequestSchema>;
+export type LaunchRequest = Omit<z.output<typeof launchRequestSchema>, "decimals"> & {
+  decimals: number;
+};
 
 export function parseLaunchRequest(input: unknown, config: LaunchpadConfig): LaunchRequest {
   const parsed = launchRequestSchema.parse(input);
